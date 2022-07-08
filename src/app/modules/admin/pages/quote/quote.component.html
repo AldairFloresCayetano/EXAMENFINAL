@@ -1,0 +1,287 @@
+<div class="relative flex flex-col flex-auto min-w-0 overflow-hidden">
+    <!-- Background - @formatter:off -->
+    <svg class="-z-1 absolute inset-0" viewBox="0 0 960 540" width="100%" height="100%"
+        preserveAspectRatio="xMidYMax slice" xmlns="http://www.w3.org/2000/svg">
+        <g class="opacity-40 text-gray-200 dark:text-gray-800" fill="none" stroke="currentColor" stroke-width="100">
+            <circle r="234" cx="196" cy="23"></circle>
+            <circle r="234" cx="790" cy="491"></circle>
+        </g>
+    </svg>
+    <!-- Header & Cards -->
+    <div class="relative pt-8 pb-12 sm:pt-20 sm:pb-24 px-6 sm:px-16 overflow-hidden">
+        <!-- Header -->
+        <div class="flex flex-col">
+            <div class="mt-1 text-4xl sm:text-7xl font-extrabold tracking-tight leading-tight">
+                Realizar cotización
+            </div>
+            <h2 class="text-xl font-semibold">
+                Ingresa los datos de la instancia
+            </h2>
+        </div>
+        <!-- Inputs -->
+        <div class="flex justify-start mt-4 sm:mt-4">
+            <div class="w-full max-w-sm md:max-w-7xl">
+                <form class="flex flex-col justify-start pt-10 overflow-hidden">
+                    <div class="grid justify-start grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-6 lg:gap-y-0 md:gap-x-6 lg:gap-x-0 mt-4">
+                        <mat-form-field class="flex-auto mr-3">
+                            <input
+                            matInput
+                            [placeholder]="'Título de la cotización'">
+                        </mat-form-field>
+                        <mat-form-field class="flex-auto col-span-3">
+                            <input
+                            matInput
+                            [placeholder]="'Descripción (Opcional)'">
+                        </mat-form-field>
+                    </div>
+                    <button
+                            class="px-6 ml-3 max-w-sm my-0 mx-auto"
+                            mat-flat-button
+                            [color]="'primary'">
+                            Guardar cotización
+                        </button>
+                </form>
+                <form class="flex flex-col justify-start pt-10 overflow-hidden">
+                    <div class="grid justify-start grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-6 lg:gap-y-0 md:gap-x-6 lg:gap-x-0">
+                        <div class="flex flex-col gt-xs:flex-row mr-3">
+                            <p class="text-lg font-medium mb-4">Seleciona el proveedor</p>
+                            <mat-form-field class="flex-auto gt-xs:pr-3">
+                                <mat-select [placeholder]="'Cloud Provider'" [formControl]="formProvider" multiple (closed)="addProvider()">
+                                    <mat-option *ngFor="let provider of providers" value="{{provider.value}}">
+                                        {{provider.name}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="flex flex-col gt-xs:flex-row mr-3">
+                            <p class="text-lg font-medium mb-4">Seleciona la tecnologia</p>
+                            <mat-form-field class="flex-auto gt-xs:pr-3">
+                                <mat-select [placeholder]="'Cloud Service'" [formControl]="formService" multiple (closed)="addService()">
+                                    <mat-option *ngFor="let service of services" value="{{service.value}}">
+                                        {{service.name}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div
+                        class="mb-4"
+                        *ngFor="let x of selectedService"
+                    >
+                        <div
+                            class="mt-1 text-3xl text-blue-600	 sm:text-5xl font-extrabold tracking-tight leading-tight "
+                            *ngIf="x === 'vm'"
+                        >
+                            Virtual Machines
+                        </div>
+                        <div
+                            class="mt-1 text-3xl text-blue-600	 sm:text-5xl font-extrabold tracking-tight leading-tight cr "
+                            *ngIf="x === 'db'"
+                        >
+                            Bases de datos
+                        </div>
+                        <div
+                            class="mt-1 text-3xl text-blue-600	 sm:text-5xl font-extrabold tracking-tight leading-tight cr"
+                            *ngIf="x === 'sl'"
+                        >
+                            Serverless Computing
+                        </div>
+                        <div
+                        *ngIf="x === 'vm'"
+                        >
+                            <div class="grid justify-start grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-6 lg:gap-y-0 md:gap-x-6 lg:gap-x-0 mt-4">
+                                    <div class="flex flex-col gt-xs:flex-row mr-3">
+                                        <p class="text-lg font-medium mb-4">Seleciona la region</p>
+                                        <mat-form-field class="flex-auto gt-xs:pr-3">
+                                            <mat-select [placeholder]="'Region'">
+                                                <mat-option value="r1">ES-231</mat-option>
+                                                <mat-option value="r2">NT-311</mat-option>
+                                                <mat-option value="r3">ES-171</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="flex flex-col gt-xs:flex-row mr-3">
+                                        <p class="text-lg font-medium mb-4">Seleciona el SO</p>
+                                        <mat-form-field class="flex-auto gt-xs:pr-3">
+                                            <mat-select [placeholder]="'Sistema Operativo'">
+                                                <mat-option value="so1">Linux</mat-option>
+                                                <mat-option value="so2">Windows</mat-option>
+                                                <mat-option value="so3">MacOS</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="flex flex-col gt-xs:flex-row mr-3">
+                                        <p class="text-lg font-medium mb-4">Seleciona el Tipo/Categoria</p>
+                                        <mat-form-field class="flex-auto gt-xs:pr-3">
+                                            <mat-select [placeholder]="'Cloud Service Type'">
+                                                <mat-option value="ty1">Basic</mat-option>
+                                                <mat-option value="ty2">Advanced</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="flex flex-col gt-xs:flex-row mr-3">
+                                        <p class="text-lg font-medium mb-4">Cantidad de memoria</p>
+                                        <mat-form-field class="flex-auto gt-xs:pr-3">
+                                            <input
+                                            matInput
+                                            [placeholder]="'Memory Size'">
+                                        </mat-form-field>
+                                    </div>
+                            </div>
+                            <div class="grid justify-start grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-6 lg:gap-y-0 md:gap-x-6 lg:gap-x-0 mt-4">
+                                    <div class="flex flex-col gt-xs:flex-row mr-3">
+                                        <p class="text-lg font-medium mb-4">Cantidad de nucleos</p>
+                                        <mat-form-field class="flex-auto gt-xs:pr-3">
+                                            <input
+                                            matInput
+                                            [placeholder]="'Quantity of Cores'">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="flex flex-col gt-xs:flex-row mr-3">
+                                        <p class="text-lg font-medium mb-4">Cantidad de instancias</p>
+                                        <mat-form-field class="flex-auto gt-xs:pr-3">
+                                            <input
+                                            matInput
+                                            [placeholder]="'Instances'">
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="flex flex-col gt-xs:flex-row mr-3">
+                                        <p class="text-lg font-medium mb-4">Tiempo de uso de la tecnologia</p>
+                                        <mat-form-field class="flex-auto gt-xs:pr-3">
+                                            <input
+                                            matInput
+                                            [placeholder]="'Time to use'">
+                                        </mat-form-field>
+                                    </div>
+                            </div>
+                        </div>
+                        <div
+                            *ngIf="x === 'db'"
+                        >
+                            <div class="grid justify-start grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-6 lg:gap-y-0 md:gap-x-6 lg:gap-x-0 mt-4">
+                                <div class="flex flex-col gt-xs:flex-row mr-3">
+                                    <p class="text-lg font-medium mb-4">Seleciona la region</p>
+                                    <mat-form-field class="flex-auto gt-xs:pr-3">
+                                        <mat-select [placeholder]="'Region'">
+                                            <mat-option value="r1">ES-231</mat-option>
+                                            <mat-option value="r2">NT-311</mat-option>
+                                            <mat-option value="r3">ES-171</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="flex flex-col gt-xs:flex-row mr-3">
+                                    <p class="text-lg font-medium mb-4">Seleciona el tipo</p>
+                                    <mat-form-field class="flex-auto gt-xs:pr-3">
+                                        <mat-select [placeholder]="'Tipo de Base de datos'">
+                                            <mat-option value="db1">SQL</mat-option>
+                                            <mat-option value="db2">NoSQL</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="flex flex-col gt-xs:flex-row mr-3">
+                                    <p class="text-lg font-medium mb-4">Seleciona el Tipo/Categoria</p>
+                                    <mat-form-field class="flex-auto gt-xs:pr-3">
+                                        <mat-select [placeholder]="'Cloud Service Type'">
+                                            <mat-option value="ty1">Basic</mat-option>
+                                            <mat-option value="ty2">Advanced</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="flex flex-col gt-xs:flex-row mr-3">
+                                    <p class="text-lg font-medium mb-4">Cantidad de memoria</p>
+                                    <mat-form-field class="flex-auto gt-xs:pr-3">
+                                        <input
+                                        matInput
+                                        [placeholder]="'Memory Size'">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <div class="grid justify-start grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-6 lg:gap-y-0 md:gap-x-6 lg:gap-x-0 mt-4">
+                                <div class="flex flex-col gt-xs:flex-row mr-3">
+                                    <p class="text-lg font-medium mb-4">Cantidad de instancias</p>
+                                    <mat-form-field class="flex-auto gt-xs:pr-3">
+                                        <input
+                                        matInput
+                                        [placeholder]="'Instances'">
+                                    </mat-form-field>
+                                </div>
+                                <div class="flex flex-col gt-xs:flex-row mr-3">
+                                    <p class="text-lg font-medium mb-4">Tiempo de uso de la tecnologia</p>
+                                    <mat-form-field class="flex-auto gt-xs:pr-3">
+                                        <input
+                                        matInput
+                                        [placeholder]="'Time to use'">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            *ngIf="x === 'sl'"
+                        >
+                            <div class="grid justify-start grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-6 lg:gap-y-0 md:gap-x-6 lg:gap-x-0 mt-4">
+                                <div class="flex flex-col gt-xs:flex-row mr-3">
+                                    <p class="text-lg font-medium mb-4">Seleciona la region</p>
+                                    <mat-form-field class="flex-auto gt-xs:pr-3">
+                                        <mat-select [placeholder]="'Region'">
+                                            <mat-option value="r1">ES-231</mat-option>
+                                            <mat-option value="r2">NT-311</mat-option>
+                                            <mat-option value="r3">ES-171</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="flex flex-col gt-xs:flex-row mr-3">
+                                    <p class="text-lg font-medium mb-4">Seleciona la arquitectura</p>
+                                    <mat-form-field class="flex-auto gt-xs:pr-3">
+                                        <mat-select [placeholder]="'Tipo de Arquitectura'">
+                                            <mat-option value="ta1">x86</mat-option>
+                                            <mat-option value="ta2">ARM</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="flex flex-col gt-xs:flex-row mr-3">
+                                    <p class="text-lg font-medium mb-4">Seleciona el Tipo/Categoria</p>
+                                    <mat-form-field class="flex-auto gt-xs:pr-3">
+                                        <mat-select [placeholder]="'Cloud Service Type'">
+                                            <mat-option value="ty1">Basic</mat-option>
+                                            <mat-option value="ty2">Advanced</mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="flex flex-col gt-xs:flex-row mr-3">
+                                    <p class="text-lg font-medium mb-4">Cantidad de peticiones</p>
+                                    <mat-form-field class="flex-auto gt-xs:pr-3">
+                                        <input
+                                        matInput
+                                        [placeholder]="'Memory Size'">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+
+                            <div class="grid justify-start grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-6 lg:gap-y-0 md:gap-x-6 lg:gap-x-0 mt-4">
+                                <div class="flex flex-col gt-xs:flex-row mr-3">
+                                    <p class="text-lg font-medium mb-4">Cantidad de instancias</p>
+                                    <mat-form-field class="flex-auto gt-xs:pr-3">
+                                        <input
+                                        matInput
+                                        [placeholder]="'Instances'">
+                                    </mat-form-field>
+                                </div>
+                                <div class="flex flex-col gt-xs:flex-row mr-3">
+                                    <p class="text-lg font-medium mb-4">Tiempo de uso de la tecnologia</p>
+                                    <mat-form-field class="flex-auto gt-xs:pr-3">
+                                        <input
+                                        matInput
+                                        [placeholder]="'Time to use'">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

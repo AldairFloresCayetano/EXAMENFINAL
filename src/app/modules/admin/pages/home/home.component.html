@@ -1,0 +1,266 @@
+<div class="relative flex flex-col flex-auto min-w-0 overflow-hidden">
+ <!-- Background - @formatter:off -->
+ <svg
+  class="-z-1 absolute inset-0"
+  viewBox="0 0 960 540"
+  width="100%"
+  height="100%"
+  preserveAspectRatio="xMidYMax slice"
+  xmlns="http://www.w3.org/2000/svg"
+ >
+  <g
+   class="opacity-40 text-gray-200 dark:text-gray-800"
+   fill="none"
+   stroke="currentColor"
+   stroke-width="100"
+  >
+   <circle r="234" cx="196" cy="23"></circle>
+   <circle r="234" cx="790" cy="491"></circle>
+  </g>
+ </svg>
+ <!-- Header & Cards -->
+ <div
+  class="relative pt-8 pb-12 sm:pt-20 sm:pb-24 px-6 sm:px-16 overflow-hidden"
+ >
+  <!-- @formatter:on -->
+  <!-- Header -->
+  <div class="flex flex-col items-center">
+   <div
+    class="mt-1 text-4xl sm:text-7xl font-extrabold tracking-tight leading-tight text-center"
+   >
+    Empieza a cotizar y despliega tu proximo proyecto
+   </div>
+  </div>
+  <!-- Cards -->
+  <div class="flex justify-center mt-10 sm:mt-20">
+   <div class="w-full max-w-sm md:max-w-7xl">
+    <div
+     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-6 lg:gap-y-0 md:gap-x-6 lg:gap-x-0"
+    >
+     <!-- Card 1 -->
+     <fuse-card
+      class="flex flex-col max-w-80 w-full filter-article ng-tns-c181-40 ng-star-inserted"
+     >
+      <div class="m-8 mb-4 ng-tns-c181-40 ng-star-inserted">
+       <div class="text-2xl font-semibold leading-tight">
+        Virtual Machines
+       </div>
+       <div class="mt-4 text-justify">
+        Cotizar una maquina virtual para conocer el
+        rendimiento maximo de tu prespuesto y obtener
+        las mejores caracterisitcas
+       </div>
+       <button
+        mat-flat-button=""
+        class="mat-focus-indicator px-6 mt-8 mat-flat-button mat-button-base mat-primary ng-tns-c181-72 ng-star-inserted"
+        tabindex="0"
+        [routerLink]="'/quote'"
+       >
+        <span class="mat-button-wrapper">
+         Comenzar </span
+        ><span
+         matripple=""
+         class="mat-ripple mat-button-ripple"
+        ></span
+        ><span class="mat-button-focus-overlay"></span>
+       </button>
+      </div>
+     </fuse-card>
+     <!-- Card 2 -->
+     <fuse-card
+      class="flex flex-col max-w-80 w-full filter-article ng-tns-c181-40 ng-star-inserted"
+     >
+      <div class="m-8 mb-4 ng-tns-c181-40 ng-star-inserted">
+       <div class="text-2xl font-semibold leading-tight">
+        Virtual Data Bases
+       </div>
+       <div class="mt-4 text-justify">
+        Cotizar una base de datos para conocer el
+        rendimiento maximo de tu prespuesto y obtener
+        las mejores caracterisitcas
+       </div>
+       <button
+        mat-flat-button=""
+        class="mat-focus-indicator px-6 mt-8 mat-flat-button mat-button-base mat-primary ng-tns-c181-72 ng-star-inserted"
+        tabindex="0"
+        [routerLink]="'/quote'"
+       >
+        <span class="mat-button-wrapper">
+         Comenzar </span
+        ><span
+         matripple=""
+         class="mat-ripple mat-button-ripple"
+        ></span
+        ><span class="mat-button-focus-overlay"></span>
+       </button>
+      </div>
+     </fuse-card>
+     <!-- Card 3 -->
+     <fuse-card
+      class="flex flex-col max-w-80 w-full filter-article ng-tns-c181-40 ng-star-inserted"
+     >
+      <div class="m-8 mb-4 ng-tns-c181-40 ng-star-inserted">
+       <div class="text-2xl font-semibold leading-tight">
+        Serverless Computing
+       </div>
+       <div class="mt-4 text-justify">
+        Cotizar una tecnologia serverless para conocer
+        el rendimiento maximo de tu prespuesto y obtener
+        las mejores caracterisitcas
+       </div>
+       <button
+        mat-flat-button=""
+        class="mat-focus-indicator px-6 mt-8 mat-flat-button mat-button-base mat-primary ng-tns-c181-72 ng-star-inserted"
+        tabindex="0"
+        [routerLink]="['/quote']"
+       >
+        <span class="mat-button-wrapper">
+         Comenzar </span
+        ><span
+         matripple=""
+         class="mat-ripple mat-button-ripple"
+        ></span
+        ><span class="mat-button-focus-overlay"></span>
+       </button>
+      </div>
+     </fuse-card>
+    </div>
+   </div>
+  </div>
+
+  <!-- Cards -->
+  <div class="flex justify-center mt-10 sm:mt-20">
+   <div class="w-full max-w-sm md:max-w-7xl flex justify-center">
+    <fuse-card
+     class="flex flex-col lg:flex-row max-w-sm lg:max-w-240 filter-pricing ng-tns-c125-111 ng-star-inserted"
+     ><!---->
+     <div
+      class="p-6 sm:p-8 lg:p-10 ng-tns-c125-111 ng-star-inserted"
+     >
+      <div class="text-3xl font-bold">
+       Conoce sobre nuestro proximo servicio
+      </div>
+      <div class="mt-2 leading-relaxed text-secondary">
+       Un filtro de escalabilidad y de rendimiento para aplicar a cualquier cotizacion
+       de tu historial o una nueva cotizacion.
+      </div>
+      <div class="flex items-center mt-10">
+       <div class="font-medium text-secondary">
+        Funcionalidades
+       </div>
+       <div class="flex-auto ml-2 border-b-2"></div>
+      </div>
+      <div
+       class="grid grid-cols-1 lg:grid-cols-2 gap-y-4 mt-6"
+      >
+       <div class="flex items-center">
+        <mat-icon
+         role="img"
+         class="mat-icon notranslate icon-size-5 text-primary mat-icon-no-color"
+         aria-hidden="true"
+         data-mat-icon-type="svg"
+         data-mat-icon-name="check-circle"
+         data-mat-icon-namespace="heroicons_solid"
+         ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          fit=""
+          height="100%"
+          width="100%"
+          preserveAspectRatio="xMidYMid meet"
+          focusable="false"
+         >
+          <path
+           fill-rule="evenodd"
+           d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+           clip-rule="evenodd"
+          ></path></svg
+        ></mat-icon>
+        <div class="ml-2">Filtro por tecnologia especifica</div>
+       </div>
+       <div class="flex items-center">
+        <mat-icon
+         role="img"
+         class="mat-icon notranslate icon-size-5 text-primary mat-icon-no-color"
+         aria-hidden="true"
+         data-mat-icon-type="svg"
+         data-mat-icon-name="check-circle"
+         data-mat-icon-namespace="heroicons_solid"
+         ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          fit=""
+          height="100%"
+          width="100%"
+          preserveAspectRatio="xMidYMid meet"
+          focusable="false"
+         >
+          <path
+           fill-rule="evenodd"
+           d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+           clip-rule="evenodd"
+          ></path></svg
+        ></mat-icon>
+        <div class="ml-2">
+         Análisis de datos en tiempo real
+        </div>
+       </div>
+       <div class="flex items-center">
+        <mat-icon
+         role="img"
+         class="mat-icon notranslate icon-size-5 text-primary mat-icon-no-color"
+         aria-hidden="true"
+         data-mat-icon-type="svg"
+         data-mat-icon-name="check-circle"
+         data-mat-icon-namespace="heroicons_solid"
+         ><svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          fill="currentColor"
+          fit=""
+          height="100%"
+          width="100%"
+          preserveAspectRatio="xMidYMid meet"
+          focusable="false"
+         >
+          <path
+           fill-rule="evenodd"
+           d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+           clip-rule="evenodd"
+          ></path></svg
+        ></mat-icon>
+        <div class="ml-2">Análisis gráfico</div>
+       </div>
+      </div>
+     </div>
+     <div
+      class="flex flex-col items-center p-8 lg:px-10 lg:py-12 lg:min-w-80 bg-gray-100 dark:bg-black dark:bg-opacity-10 ng-star-inserted"
+     >
+      <div class="flex items-center whitespace-nowrap">
+       <div class="text-4xl font-extrabold tracking-tight">
+        Proximamente
+       </div>
+      </div>
+      <div class="font-medium text-center text-secondary">
+       <div>Disponible solo con plan de empresas</div>
+      </div>
+      <button
+       mat-flat-button=""
+       class="mat-focus-indicator w-full mt-8 lg:mt-auto mat-flat-button mat-button-base mat-primary"
+      >
+       <span class="mat-button-wrapper"> Más información </span
+       ><span
+        matripple=""
+        class="mat-ripple mat-button-ripple"
+       ></span
+       ><span class="mat-button-focus-overlay"></span>
+      </button>
+     </div>
+     <!----><!----><!----></fuse-card
+    >
+   </div>
+  </div>
+ </div>
+</div>
